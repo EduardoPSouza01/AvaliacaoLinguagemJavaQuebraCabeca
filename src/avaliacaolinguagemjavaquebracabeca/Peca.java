@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package avaliacaolinguagemjavaquebracabeca;
 
-/**
- *
- * @author aluno
- */
-public class Peca {
+abstract class Peca {
+    private int id;
     
+    public Peca(int id){
+        this.id = id;
+    }
+    
+    public int getId(){
+        return id;
+    }  
+    public abstract boolean encaixa(Peca outra, String lado);    
 }

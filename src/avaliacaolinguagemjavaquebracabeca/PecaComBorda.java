@@ -16,7 +16,7 @@ public class PecaComBorda extends Peca{
         this.bordaSuperior  = bordaSuperior;
     }
     
-    public String Borda(String lado){
+    public String getBorda(String lado){
         switch(lado.toLowerCase()){
             case "esquerdo":
                 return bordaEsquerda;
@@ -33,7 +33,8 @@ public class PecaComBorda extends Peca{
             
     @Override
     public boolean encaixa(Peca outra, String lado) {
-       if (outra instanceof PecaComDentes outraPeca) {
+        
+       if (outra instanceof PecaComBorda outraPeca) {
             switch (lado.toLowerCase()) {
                 case "superior":
                     return this.bordaSuperior.equals(outraPeca.getBorda("inferior"));
@@ -47,5 +48,4 @@ public class PecaComBorda extends Peca{
         }
         return false;
     }
-    
 }

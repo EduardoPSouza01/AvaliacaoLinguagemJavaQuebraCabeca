@@ -15,12 +15,12 @@ public class Tabuleiro {
     public boolean adicionarPeca(Peca peca, int linha, int coluna){
 
         if (linha < 0 || linha >= linha || coluna < 0 || coluna >= coluna) {
-            System.out.println("Posição inválida!");
+            System.out.println("Posicao invalida");
             return false;
         }   
         
         if(grid[linha][coluna] != null){
-            System.out.println("\"Espaço já ocupado!");
+            System.out.println("Espaco ja ocupado");
             return false;
         }
         
@@ -29,7 +29,7 @@ public class Tabuleiro {
             return true;
         }
         
-        System.out.println("Não é possível encaixar a peça na posição (" + linha + ", " + coluna + ").");
+        System.out.println("Nao e possível encaixar a peca na posicao (" + linha + ", " + coluna + ")");
         return false;
             
     }
@@ -50,10 +50,24 @@ public class Tabuleiro {
         
         if(linha < linha -1 && grid[linha +1] [coluna] != null){
             encaixa &= peca.encaixa(grid[linha +1 ][coluna], "direita");
+         
         }
         
-        return true;
+        return encaixa;
         
+    }
+    
+    public void exibirTabuleiro() {
+        for (int i = 0; i < linha; i++) {
+            for (int j = 0; j < coluna; j++) {
+                if (grid[i][j] == null) {
+                    System.out.print("[ ] ");
+                } else {
+                    System.out.print("[" + grid[i][j].getId() + "} ");
+                }
+            }
+            System.out.println();
+        }
     }
     
 }

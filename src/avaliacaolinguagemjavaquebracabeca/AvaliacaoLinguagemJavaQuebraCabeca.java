@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package avaliacaolinguagemjavaquebracabeca;
 
-/**
- *
- * @author aluno
- */
+
 public class AvaliacaoLinguagemJavaQuebraCabeca {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Tabuleiro tabuleiro = new Tabuleiro(3, 3);
+
+        Peca peca1 = new PecaComBorda(1, "A", "B", "C", "D");
+        Peca peca2 = new PecaComBorda(2, "B", "X", "D", "Y");
+        Peca peca3 = new PecaComBorda(3, "X", "Z", "Y", "W");
+
+        tabuleiro.adicionarPeca(peca1, 0, 0);
+        tabuleiro.adicionarPeca(peca2, 1, 0);
+        tabuleiro.adicionarPeca(peca3, 2, 0);
+
+        tabuleiro.exibirTabuleiro();
     }
     
 }
